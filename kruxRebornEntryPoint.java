@@ -12,11 +12,35 @@ public class kruxRebornEntryPoint implements Runnable {
      }
 }
 
-class kruxRebornSpriteObject {
+class oberonKeyboardController {
 
 }
 
-class kruxRebornObjectAsset {
+class oberonDisplayController extends JPanel {
+// You can use this constructor to provide the object layers when creating the MainWindow
+   public oberonDisplayController(oberonLayer rbo[]) {
+      
+   }
+
+   public void paintComponent(Graphics g) {
+   // Draw layers from BG#2 to OVERLAY, in order, to overlap correctly   
+   // BG#2
+   
+   // BG#1
+   
+   // SPRITE
+   
+   // FG#1
+   
+   // OVERLAY
+   }
+}
+
+class oberonAIController {
+
+}
+
+class oberonAsset {
 // Constants
    public static final byte NO_ACTION = 0x00;
    public static final byte GRANT_HP = 0x01;
@@ -64,46 +88,25 @@ class kruxRebornObjectAsset {
    protected ImageIcon assetIcon = null;
    private boolean isSprite = false;
 
-   public kruxRebornObjectAsset(ImageIcon asset, boolean sprite) {
+   public oberonAsset(ImageIcon asset) {
    
    }
 }
 
-class kruxRebornAssetCache {
-   public boolean addObject(kruxRebornObjectAsset oas) {
-      return true;
-   }
-   
-   public kruxRebornObjectAsset getObjectAt(int index) {
-      return null;
+class oberonSprite extends oberonAsset {
+   public oberonSprite(ImageIcon asset) {
+      super(asset);
    }
 }
 
-class kruxRebornObjectLayer {
+class oberonLayer {
    
 }
 
-class kruxRebornContentPanel extends JPanel {
-// You can use this constructor to provide the object layers when creating the MainWindow
-   public kruxRebornContentPanel(kruxRebornObjectLayer rbo[], kruxRebornAssetCache ach) {
-      
-   }
-   
-// You can use this constructor to at minimum provide the asset cache for use
-   public kruxRebornContentPanel(kruxRebornAssetCache ach) {
-      
-   }
+class oberonOverlay extends oberonLayer {
 
-   public void paintComponent(Graphics g) {
-   // Draw layers from BG#2 to OVERLAY, in order, to overlap correctly   
-   // BG#2
-   
-   // BG#1
-   
-   // SPRITE
-   
-   // FG#1
-   
-   // OVERLAY
-   }
+}
+
+class oberonPlayfield {
+
 }
